@@ -1,16 +1,28 @@
 #include "sort.h"
 
 /**
+ * swap - swaps two values in an array
+ * @first: first param
+ * @second: param
+ * Return - Nothing
+ */
+void swap(int *first, int *second)
+{
+	int tmp = *first;
+	*first = *second;
+	*second = tmp;
+}
+
+/**
  * bubble_sort - sorts using bubble sort algorithm
  * @array: an array to be sorted
  * @size: the length of the array
- * Return - 0 on success
+ * Return - Nothing
  */
 
 void bubble_sort(int *array, size_t size)
 {
 	size_t outer_index, inner_index;
-	int temp;
 
 	for (outer_index = 0; outer_index < size - 1; outer_index++)
 	{
@@ -21,11 +33,7 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[inner_index] > array[inner_index + 1])
 			{
-				/*swap the elements */
-				temp = array[inner_index];
-				array[inner_index] = array[inner_index + 1];
-				array[inner_index + 1] = temp;
-
+				swap(&(array[inner_index]), &(array[inner_index + 1]));
 				/* Print the array after each swap */
 				print_array(array, size);
 				swapped = 1;
