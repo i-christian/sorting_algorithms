@@ -24,6 +24,11 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t outer_index, inner_index;
 
+	if (array == NULL || size < 2)
+	{
+		return;
+	}
+
 	for (outer_index = 0; outer_index < size - 1; outer_index++)
 	{
 		/*check if swapping occurs */
