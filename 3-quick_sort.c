@@ -24,9 +24,19 @@ void swap(int *num1, int *num2)
 
 int partition(int *array, int low, int high)
 {
-	int pivot = array[high];
-	int i = low - 1;
-	int j;
+	int pivotIndex, pivot, i, j;
+
+	if (array == NULL || low < 0 || high < 0 || low >= high)
+	{
+		return -1;
+	}
+
+
+	pivotIndex = low + (high - low) / 2;
+	pivot = array[pivotIndex];
+	i = low - 1;
+
+	swap(&array[pivotIndex], &array[high]);
 
 	for (j = low; j < high; j++)
 	{
