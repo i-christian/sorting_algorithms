@@ -24,8 +24,11 @@ void swap(int *num1, int *num2)
 void selection_sort(int *array, size_t size)
 {
 	size_t i, j, min_value;
+
 	if (size < 2)
+	{
 		return;
+	}
 
 	for (i = 0; i < size - 1; i++)
 	{
